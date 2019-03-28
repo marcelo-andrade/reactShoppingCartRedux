@@ -22,6 +22,8 @@ const Header = ({shoppingCart}) => (
     </header>
 );
 
-export default connect(state => ({
+const mapStateToProps = state => ({
     shoppingCart: state.shoppingCart.shoppingCart.length
-}))(Header);
+});
+
+export default connect(mapStateToProps)(Header);

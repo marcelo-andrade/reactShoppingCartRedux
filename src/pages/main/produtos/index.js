@@ -4,14 +4,9 @@ import { connect } from 'react-redux';
 
 import listaProdutos from '../../../services/produtos';
 
-function addProductToShoppingCart(produto){
-    return {
-        type: 'ADD_PRODUCT_TO_SHOPPING_CART',
-        produto
-    };
-}
+import * as ShoppingCartActions from '../../../store/actions/shoppingCart'; 
 
-const Produtos = ({ dispatch }) => {
+const Produtos = ({ addProductToShoppingCart }) => {
     return (
         <div className="listaProdutos">
             {listaProdutos.map(item => (
@@ -21,7 +16,9 @@ const Produtos = ({ dispatch }) => {
                     <div className="valor">
                         {item.valor}
                     </div>
-                    <button className="btnComprar" onClick={() => dispatch(addProductToShoppingCart(item))}>
+                    <button 
+                        className="btnComprar" 
+                        onClick={() => addProductToShoppingCart(item)}>
                         Comprar
                     </button>
                 </article>
@@ -30,4 +27,10 @@ const Produtos = ({ dispatch }) => {
     );
 };
 
-export default connect()(Produtos);
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = dispatch => ({
+    addProductToShoppingCart: (produto) => dispatch(ShoppingCartActions.addProductToShoppingCart(produto))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Produtos);
