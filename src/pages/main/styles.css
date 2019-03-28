@@ -1,0 +1,40 @@
+.listaProdutos{
+    display: flex;
+    justify-content: space-between;
+}
+.listaProdutos .item{
+    background-color: #fff;
+    border-radius: 5px;
+    border:1px solid #f5f5f5;
+    padding:15px;
+    width:280px;
+    flex-shrink: 0;
+    box-shadow: 1px 1px 1px rgba(0, 0 , 0, .3);
+}
+.listaProdutos .item .foto{
+    width:80%;
+    height:200px;
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.listaProdutos .item .foto img{
+    max-height: 100%;
+}
+.listaProdutos .item .titulo{
+    font-size: 1.2rem;
+    line-height: 1.4em;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+.listaProdutos .item .valor{
+    font-weight: bold;
+    color:#13abe1;
+}
+.listaProdutos .item  .btnComprar{
+    display: block;
+    width:100%;
+    padding:10px;
+    margin-top: 15px;
+}

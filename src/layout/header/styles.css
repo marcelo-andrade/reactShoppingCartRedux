@@ -1,0 +1,28 @@
+.main-header{
+    border-bottom: 1px solid #ddd;
+    padding:20px 0;
+    background-color: #ff9900;
+}
+.main-header-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-header-logo a{
+    font-weight: bold;
+    font-size: 30px;
+    color:#fff;
+    text-decoration: none;
+}
+
+.main-header-shoppingCart a{
+    color:#fff;
+    font-size: 20px;
+    font-weight: normal;
+    text-decoration: none;
+}
+.main-header-shoppingCart a .totalProd{
+    font-size: .8rem;
+    margin-left: 10px;
+}
