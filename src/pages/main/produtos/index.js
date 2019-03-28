@@ -1,9 +1,8 @@
 import React from 'react';
-
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import listaProdutos from '../../../services/produtos';
-
 import * as ShoppingCartActions from '../../../store/actions/shoppingCart'; 
 
 const Produtos = ({ addProductToShoppingCart }) => {
@@ -29,8 +28,10 @@ const Produtos = ({ addProductToShoppingCart }) => {
 
 const mapStateToProps = state => ({});
 
-const mapDispatchToProps = dispatch => ({
-    addProductToShoppingCart: (produto) => dispatch(ShoppingCartActions.addProductToShoppingCart(produto))
-});
+// const mapDispatchToProps = dispatch => ({
+//     addProductToShoppingCart: (produto) => dispatch(ShoppingCartActions.addProductToShoppingCart(produto))
+// });
+const mapDispatchToProps = dispatch => bindActionCreators(ShoppingCartActions, dispatch);
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Produtos);
